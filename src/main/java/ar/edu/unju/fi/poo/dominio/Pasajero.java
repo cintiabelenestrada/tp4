@@ -13,7 +13,8 @@ public class Pasajero {
         this.apellido = apellido;
         this.dni = dni;
         this.correoElectronico = correoElectronico;
-        setPassword(password);
+        this.password = password;
+        // setPassword(password);
     }
 
     // Constructor para acompañante
@@ -63,11 +64,12 @@ public class Pasajero {
     }
 
     public void setPassword(String password) {
-        if (isValidPassword(password)) {
-            this.password = password;
-        } else {
-            throw new IllegalArgumentException("Contraseña no válida");
-        }
+        this.password = password;
+        // if (isValidPassword(password)) {
+        //     this.password = password;
+        // } else {
+        //     throw new IllegalArgumentException("Contraseña no válida");
+        // }
     }
 
     private boolean isValidPassword(String password) {

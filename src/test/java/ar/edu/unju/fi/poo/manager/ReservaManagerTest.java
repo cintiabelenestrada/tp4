@@ -21,7 +21,7 @@ public class ReservaManagerTest {
 
     @Test
     public void testAgregarReservaSinAcompanante() {
-        Pasajero pasajeroPrincipal = new Pasajero("Juan", "Perez", "12345678", "juan.perez@example.com", "Passw0rd!");
+        Pasajero pasajeroPrincipal = new Pasajero("Juan", "Perez", "12345678", "juan.perez@example.com", "Passw09rd!");
         Reserva reserva = new Reserva("123", Ciudad.JUJUY, Ciudad.CORDOBA, new Date(), new Date(), "Economy", EstadoReserva.RESERVADA, pasajeroPrincipal, null);
         reservaManager.agregarReserva(reserva);
         assertEquals(1, reservaManager.listarReservas().size());
@@ -88,10 +88,16 @@ public class ReservaManagerTest {
 
     @Test
     public void testCancelarReserva() {
-        Pasajero pasajeroPrincipal = new Pasajero("Juan", "Perez", "12345678", "juan.perez@example.com", "Passw0rd!");
-        Reserva reserva = new Reserva("123", Ciudad.JUJUY, Ciudad.CORDOBA, new Date(), new Date(), "Economy", EstadoReserva.RESERVADA, pasajeroPrincipal, null);
-        reservaManager.agregarReserva(reserva);
-        reservaManager.cancelarReserva("123");
-        assertEquals(EstadoReserva.CANCELADA, reserva.getEstado());
+            Pasajero pasajeroPrincipal = new Pasajero("Juan", "Perez", "12345678", "juan.perez@example.com", "Passw0rd!");
+            Reserva reserva = new Reserva("123", Ciudad.JUJUY, Ciudad.CORDOBA, new Date(), new Date(), "Economy", EstadoReserva.RESERVADA, pasajeroPrincipal, null);
+            reservaManager.agregarReserva(reserva);
+            
+            System.out.println("Estado antes de cancelar: " + reserva.getEstado());
+            
+            reservaManager.cancelarReserva("123");
+            
+            System.out.println("Estado después de cancelar: " + reserva.getEstado());
+            
+            assertEquals(EstadoReserva.CANCELADA, reserva.getEstado());
     }
 }

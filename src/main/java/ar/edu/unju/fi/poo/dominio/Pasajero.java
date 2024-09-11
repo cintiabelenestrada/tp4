@@ -65,8 +65,9 @@ public class Pasajero {
 
     public void setPassword(String password) {
         this.password = password;
-        // if (isValidPassword(password)) {
-        //     this.password = password;
+        if (isValidPassword(password)) {
+            this.password = password;
+        }
         // } else {
         //     throw new IllegalArgumentException("Contraseña no válida");
         // }

@@ -1,13 +1,5 @@
 package ar.edu.unju.fi.poo.dominio;
 
-/**
- * Clase Pasajero: Clase padre de cual se usara para crear la clase
- * Reserva
- * 
- * @author Estrada Cintia Belén
- * @version 1.0
- */
-
 public class Pasajero {
     private String nombre;
     private String apellido;
@@ -15,13 +7,21 @@ public class Pasajero {
     private String correoElectronico;
     private String password;
 
-    // Constructor
+    // Constructor para pasajero principal
     public Pasajero(String nombre, String apellido, String dni, String correoElectronico, String password) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.correoElectronico = correoElectronico;
         setPassword(password);
+    }
+
+    // Constructor para acompañante
+    public Pasajero(String nombre, String apellido, String dni, String correoElectronico) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.correoElectronico = correoElectronico;
     }
 
     // Getters y setters
@@ -78,5 +78,4 @@ public class Pasajero {
         if (!password.matches(".*[!@#$%^&*(),.?\":{}|<>].*")) return false;
         return true;
     }
-
 }
